@@ -25,6 +25,11 @@ namespace RockyTV.Duality.Plugins.IronPython
             get { return _engine; }
         }
 
+        protected virtual float Delta
+        {
+            get { return Time.MsPFMult * Time.TimeMult; }
+        }
+
 		public void OnInit(InitContext context)
         {
             if (!Script.IsAvailable) return;
@@ -39,7 +44,7 @@ namespace RockyTV.Duality.Plugins.IronPython
         public void OnUpdate()
         {
             if (_engine.HasMethod("update"))
-                _engine.CallMethod("update");
+                _engine.CallMethod("update", Delta);
         }
 
         public void OnShutdown(ShutdownContext context)
