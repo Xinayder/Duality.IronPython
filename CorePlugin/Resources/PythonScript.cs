@@ -7,7 +7,7 @@ using System.IO;
 using Duality;
 using Duality.Editor;
 
-namespace PythonScripting.Resources
+namespace RockyTV.Duality.Plugins.IronPython.Resources
 {
     public class PythonScript : Resource
     {

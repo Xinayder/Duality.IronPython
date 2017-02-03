@@ -5,7 +5,7 @@ using Duality.Editor;
 using Duality.Resources;
 using Duality.Editor.AssetManagement;
 
-using PythonScripting.Resources;
+using RockyTV.Duality.Plugins.IronPython.Resources;
 using System;
 using System.Linq;
 
