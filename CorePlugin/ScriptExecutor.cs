@@ -32,13 +32,14 @@ namespace RockyTV.Duality.Plugins.IronPython
             _engine = new PythonExecutionEngine(Script.Res.Content);
             _engine.SetVariable("gameObject", GameObj);
 
-            if (context == InitContext.Activate)
+            if (_engine.HasMethod("start"))
                 _engine.CallMethod("start");
         }
 
         public void OnUpdate()
         {
-
+            if (_engine.HasMethod("update"))
+                _engine.CallMethod("update");
         }
 
         public void OnShutdown(ShutdownContext context)

@@ -57,5 +57,13 @@ namespace RockyTV.Duality.Plugins.IronPython
         {
             return _engine.Operations.InvokeMember(_class, method, parameters);
         }
+
+        public bool HasMethod(string method)
+        {
+            object _;
+            if (_engine.Operations.TryGetMember(_class, method, out _))
+                return true;
+            return false;
+        }
     }
 }
