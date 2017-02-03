@@ -69,6 +69,7 @@
       <HintPath>..\packages\IronPython.2.7.7\lib\Net45\IronPython.Wpf.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Dynamic, Version=1.1.2.22, Culture=neutral, PublicKeyToken=7f709c5b713576e1, processorArchitecture=MSIL">
       <HintPath>..\packages\DynamicLanguageRuntime.1.1.2\lib\Net45\Microsoft.Dynamic.dll</HintPath>
       <Private>True</Private>
@@ -91,6 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CorePlugin.cs" />
+    <Compile Include="Python\ExecutionEngine.cs" />
     <Compile Include="Resources\PythonScript.cs" />
     <Compile Include="ScriptExecutor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
