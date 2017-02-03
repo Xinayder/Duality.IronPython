@@ -93,6 +93,7 @@
   <ItemGroup>
     <Compile Include="CorePlugin.cs" />
     <Compile Include="Python\ExecutionEngine.cs" />
+    <Compile Include="Properties\ResNames.cs" />
     <Compile Include="Resources\PythonScript.cs" />
     <Compile Include="ScriptExecutor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -103,6 +104,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="EmbeddedResources\script_go.png" />
+    <EmbeddedResource Include="EmbeddedResources\script_code.png" />
     <Content Include="Lib\abc.py" />
     <Content Include="Lib\aifc.py" />
     <Content Include="Lib\antigravity.py" />

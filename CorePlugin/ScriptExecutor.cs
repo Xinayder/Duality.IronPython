@@ -11,9 +11,12 @@ using IronPython.Compiler;
 
 using Microsoft.Scripting;
 using Microsoft.Scripting.Hosting;
+using Duality.Editor;
 
 namespace RockyTV.Duality.Plugins.IronPython
 {
+    [EditorHintCategory(Properties.ResNames.CategoryScripts)]
+    [EditorHintImage(Properties.ResNames.IconScriptGo)]
     public class ScriptExecutor : Component, ICmpInitializable, ICmpUpdatable
     {
         public ContentRef<PythonScript> Script { get; set; }

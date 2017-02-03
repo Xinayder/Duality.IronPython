@@ -9,6 +9,8 @@ using Duality.Editor;
 
 namespace RockyTV.Duality.Plugins.IronPython.Resources
 {
+    [EditorHintCategory(Properties.ResNames.CategoryScripts)]
+    [EditorHintImage(Properties.ResNames.IconScript)]
     public class PythonScript : Resource
     {
         protected string _content;

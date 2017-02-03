@@ -9,5 +9,10 @@
             Defines a Duality core plugin.
             </summary>
         </member>
+        <member name="T:RockyTV.Duality.Plugins.IronPython.Properties.ResNames">
+            <summary>
+            This static class contains constant string representations of certain resource names.
+            </summary>
+        </member>
     </members>
 </doc>
