@@ -42,8 +42,6 @@ namespace RockyTV.Duality.Plugins.IronPython
             foreach (string assembly in requiredAssemblies)
                 builder.AppendLine(string.Format("clr.AddReferenceToFileAndPath(r\"{0}\")", assembly));
             builder.AppendLine();
-            builder.AppendLine("from Duality import Vector2");
-            builder.AppendLine();
 
             string script = source.Insert(0, builder.ToString());
 
