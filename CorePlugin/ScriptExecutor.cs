@@ -14,8 +14,8 @@ using Microsoft.Scripting.Hosting;
 
 namespace RockyTV.Duality.Plugins.IronPython
 {
-	public class ScriptExecutor : Component, ICmpInitializable, ICmpUpdatable
-	{
+    public class ScriptExecutor : Component, ICmpInitializable, ICmpUpdatable
+    {
         public ContentRef<PythonScript> Script { get; set; }
 
         [DontSerialize]
@@ -30,7 +30,7 @@ namespace RockyTV.Duality.Plugins.IronPython
             get { return Time.MsPFMult * Time.TimeMult; }
         }
 
-		public void OnInit(InitContext context)
+        public void OnInit(InitContext context)
         {
             if (!Script.IsAvailable) return;
 
@@ -54,5 +54,5 @@ namespace RockyTV.Duality.Plugins.IronPython
                 GameObj.DisposeLater();
             }
         }
-	}
+    }
 }
