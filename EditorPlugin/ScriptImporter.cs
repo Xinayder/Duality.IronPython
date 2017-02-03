@@ -31,8 +31,24 @@ namespace PythonScripting.Editor
             get { return 0; }
         }
 
-        public void Export(IAssetExportEnvironment env) { }
-        public void PrepareExport(IAssetExportEnvironment env) { }
+        public void Export(IAssetExportEnvironment env)
+        {
+            PythonScript input = env.Input as PythonScript;
+            string outputPath = env.AddOutputPath(input.Name + SourceFileExtPrimary);
+
+            SaveScriptData(input.Content, outputPath);
+        }
+
+        public void PrepareExport(IAssetExportEnvironment env)
+        {
+            if (env.Input is PythonScript)
+                env.AddOutputPath(env.Input.Name + SourceFileExtPrimary);
+        }
+
+        private void SaveScriptData(string data, string filePath)
+        {
+            File.WriteAllText(filePath, data);
+        }
 
         public void Import(IAssetImportEnvironment env)
         {
