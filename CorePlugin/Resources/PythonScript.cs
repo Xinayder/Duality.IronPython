@@ -16,6 +16,30 @@ namespace RockyTV.Duality.Plugins.IronPython.Resources
         protected string _content;
         public string Content { get { return _content; } }
 
+        public PythonScript()
+        {
+            var sb = new StringBuilder();
+            sb.AppendLine("# You can access the parent GameObject by calling `gameObject`.");
+            sb.AppendLine("# To use Duality objects, you must first import them.");
+            sb.AppendLine("# Example:");
+            sb.AppendLine(@"#\tfrom Duality import Vector2");
+            sb.AppendLine();
+            sb.AppendLine("class PyModule: ");
+            sb.AppendLine("    def __init__(self):");
+            sb.AppendLine("        pass");
+            sb.AppendLine();
+            sb.AppendLine("# The `start` function is called whenever a component is initializing.");
+            sb.AppendLine("    def start(self):");
+            sb.AppendLine("        pass");
+            sb.AppendLine();
+            sb.AppendLine("# The `update` function is called whenever an update happens, and includes a delta.");
+            sb.AppendLine("    def update(self, delta):");
+            sb.AppendLine("        pass");
+            sb.AppendLine();
+
+            _content = sb.ToString();
+        }
+
         public void UpdateContent(string content)
         {
             _content = content;
