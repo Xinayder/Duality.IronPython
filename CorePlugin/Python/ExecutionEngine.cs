@@ -46,7 +46,6 @@ namespace RockyTV.Duality.Plugins.IronPython
             builder.AppendLine();
 
             string script = source.Insert(0, builder.ToString());
-            Console.WriteLine(script);
 
             _engine = Python.CreateEngine();
             _engine = Python.CreateEngine();
