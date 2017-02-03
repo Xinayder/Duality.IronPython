@@ -623,8 +623,18 @@
   <PropertyGroup>
     <PostBuildEvent>mkdir "$(SolutionDir)../../PythonLibs"
 mkdir "$(SolutionDir)../../Plugins"
+
 copy "$(TargetPath)" "$(SolutionDir)../../Plugins"
 copy "$(TargetDir)$(TargetName).pdb" "$(SolutionDir)../../Plugins"
+copy "$(TargetDir)/IronPython.dll" "$(SolutionDir)../../"
+copy "$(TargetDir)/IronPython.Modules.dll" "$(SolutionDir)../../"
+copy "$(TargetDir)/IronPython.SQLite.dll" "$(SolutionDir)../../"
+copy "$(TargetDir)/IronPython.Wpf.dll" "$(SolutionDir)../../"
+copy "$(TargetDir)/Microsoft.Dynamic.dll" "$(SolutionDir)../../"
+copy "$(TargetDir)/Microsoft.Scripting.dll" "$(SolutionDir)../../"
+copy "$(TargetDir)/Microsoft.Scripting.AspNet.dll" "$(SolutionDir)../../"
+copy "$(TargetDir)/Microsoft.Scripting.Metadata.dll" "$(SolutionDir)../../"
+
 xcopy /Y "$(TargetDir)*.core.xml" "$(SolutionDir)../../Plugins"
 xcopy "$(ProjectDir)/Lib" "$(SolutionDir)../../PythonLibs" /s /e /y /i</PostBuildEvent>
   </PropertyGroup>
