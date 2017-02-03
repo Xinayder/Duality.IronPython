@@ -35,7 +35,8 @@ namespace RockyTV.Duality.Plugins.IronPython
 
         public void OnInit(InitContext context)
         {
-            if (!Script.IsAvailable) return;
+            if (Script.IsExplicitNull || !Script.IsAvailable) return;
+
             if (context == InitContext.Loaded)
             {
                 _engine = new PythonExecutionEngine(Script.Res.Content);
@@ -48,8 +49,9 @@ namespace RockyTV.Duality.Plugins.IronPython
 
         public void OnUpdate()
         {
-            if (_engine.HasMethod("update"))
-                _engine.CallMethod("update", Delta);
+            if (_engine != null)
+                if (_engine.HasMethod("update"))
+                    _engine.CallMethod("update", Delta);
         }
 
         public void OnShutdown(ShutdownContext context)
