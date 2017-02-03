@@ -17,9 +17,29 @@ namespace RockyTV.Duality.Plugins.IronPython
         private CompiledCode _code;
         private object _class;
 
-        public PythonExecutionEngine(string script, string className = "PyModule")
+        public PythonExecutionEngine(string source, string className = "PyModule")
         {
-            if (string.IsNullOrEmpty(script)) throw new ArgumentException("script");
+            if (string.IsNullOrEmpty(source)) throw new ArgumentException("script");
+            string[] requiredAssemblies = new string[]
+            {
+                System.IO.Path.Combine(Environment.CurrentDirectory, "OpenTK.dll"),
+                System.IO.Path.Combine(Environment.CurrentDirectory, "Duality.dll"),
+                System.IO.Path.Combine(Environment.CurrentDirectory, "DualityPrimitives.dll")
+            };
+
+            // Add reference to Duality binaries
+            var builder = new System.Text.StringBuilder();
+            builder.AppendLine("import sys");
+            builder.AppendLine("import clr");
+            builder.AppendLine();
+            foreach (string assembly in requiredAssemblies)
+                builder.AppendLine(string.Format("clr.AddReferenceToFileAndPath(r\"{0}\")", assembly));
+            builder.AppendLine();
+            builder.AppendLine("from Duality import Vector2");
+            builder.AppendLine();
+
+            string script = source.Insert(0, builder.ToString());
+            Console.WriteLine(script);
 
             _engine = Python.CreateEngine();
             _engine = Python.CreateEngine();
