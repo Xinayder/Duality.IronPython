@@ -7,14 +7,21 @@ using IronPython.Compiler;
 using Microsoft.Scripting;
 using Microsoft.Scripting.Hosting;
 
+using Duality;
+
 namespace RockyTV.Duality.Plugins.IronPython
 {
     public class PythonExecutionEngine
     {
+        [DontSerialize]
         private ScriptEngine _engine;
+        [DontSerialize]
         private ScriptScope _scope;
+        [DontSerialize]
         private ScriptSource _source;
+        [DontSerialize]
         private CompiledCode _code;
+        [DontSerialize]
         private object _class;
 
         public PythonExecutionEngine(string source, string className = "PyModule")
