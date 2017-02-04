@@ -17,7 +17,7 @@ namespace RockyTV.Duality.Plugins.IronPython
 {
     [EditorHintCategory(Properties.ResNames.CategoryScripts)]
     [EditorHintImage(Properties.ResNames.IconScriptGo)]
-    public class ScriptExecutor : Component, ICmpInitializable, ICmpUpdatable
+    public class PythonScriptExecutor : Component, ICmpInitializable, ICmpUpdatable
     {
         public ContentRef<PythonScript> Script { get; set; }
 
