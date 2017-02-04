@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package >
   <metadata>
-    <id>RockyTV.Duality.Plugins.IronPython</id>
+    <id>RockyTV.Duality.Editor.Plugins.IronPython</id>
     <version>1.0.0</version>
     <title>Python Integration (Editor)</title>
     <authors>Alexandre Oliveira</authors>
