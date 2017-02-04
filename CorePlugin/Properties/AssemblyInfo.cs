@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // Allgemeine Informationen über eine Assembly werden über die folgenden 
 // Attribute gesteuert. Ändern Sie diese Attributwerte, um die Informationen zu ändern,
 // die mit einer Assembly verknüpft sind.
-[assembly: AssemblyTitle("GamePlugin")]
+[assembly: AssemblyTitle("Python Integration for Duality (Core)")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("GamePlugin")]
-[assembly: AssemblyCopyright("")]
+[assembly: AssemblyProduct("RockyTV.Duality.Plugins.IronPython")]
+[assembly: AssemblyCopyright("Copyright © Alexandre Oliveira 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
