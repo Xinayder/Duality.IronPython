@@ -19,7 +19,7 @@ namespace RockyTV.Duality.Plugins.IronPython.Resources
         public PythonScript()
         {
             var sb = new StringBuilder();
-            sb.AppendLine("# You can access the parent GameObject by calling `gameObject`.");
+            sb.AppendLine("# You can access the parent GameObject by calling `game_object`.");
             sb.AppendLine("#");
             sb.AppendLine("# To use Duality classes, you must first import them:");
             sb.AppendLine("#    from Duality import Vector2");
