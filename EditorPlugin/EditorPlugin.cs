@@ -5,7 +5,7 @@ using System.Text;
 
 using Duality.Editor;
 
-namespace PythonScripting.Editor
+namespace RockyTV.Duality.Editor.Plugins.IronPython
 {
 	/// <summary>
 	/// Defines a Duality editor plugin.
@@ -14,7 +14,7 @@ namespace PythonScripting.Editor
 	{
 		public override string Id
 		{
-			get { return "PythonScriptingEditorPlugin"; }
+			get { return "RockyTV.IronPython"; }
 		}
 	}
 }

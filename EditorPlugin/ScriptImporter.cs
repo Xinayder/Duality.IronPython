@@ -9,7 +9,7 @@ using RockyTV.Duality.Plugins.IronPython.Resources;
 using System;
 using System.Linq;
 
-namespace PythonScripting.Editor
+namespace RockyTV.Duality.Editor.Plugins.IronPython
 {
     public class ScriptImporter : IAssetImporter
     {

@@ -5,7 +5,7 @@ using System.Text;
 
 using Duality;
 
-namespace PythonScripting
+namespace RockyTV.Duality.Plugins.IronPython
 {
 	/// <summary>
 	/// Defines a Duality core plugin.
