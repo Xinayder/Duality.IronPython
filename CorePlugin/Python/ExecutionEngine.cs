@@ -51,7 +51,7 @@ namespace RockyTV.Duality.Plugins.IronPython
 
             // Setup stdlib path
             var searchPaths = _engine.GetSearchPaths();
-            searchPaths.Add(System.IO.Path.Combine(Environment.CurrentDirectory, "PythonLibs"));
+            searchPaths.Add(System.IO.Path.Combine(Environment.CurrentDirectory, "Lib"));
             _engine.SetSearchPaths(searchPaths);
 
             _scope = _engine.CreateScope();
