@@ -57,9 +57,7 @@ namespace RockyTV.Duality.Plugins.IronPython
         public void OnShutdown(ShutdownContext context)
         {
             if (context == ShutdownContext.Deactivate)
-            {
                 GameObj.DisposeLater();
-            }
         }
     }
 }
