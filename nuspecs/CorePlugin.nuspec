@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>RockyTV.Duality.Plugins.IronPython</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <title>Python Integration (Core)</title>
     <authors>Alexandre Oliveira</authors>
     <owners>Alexandre Oliveira</owners>
@@ -11,11 +11,18 @@
     <iconUrl>https://raw.githubusercontent.com/RockyTV/Duality.IronPython/master/nuspecs/python-icon.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <summary>Python script plugin for Duality</summary>
-    <description>Write your games using Python!</description>
+    <description>Write your games using Python!
+
+    This plugin makes it possible to write all the logic behind your game using Python instead of C#.
+
+    Beware that, as the name says, it uses the IronPython package to be able to use Python, therefore
+    there may be some features that the official Python language may not have, or some features may be
+    missing.
+    </description>
     <copyright>Copyright 2017</copyright>
     <tags>Duality Plugin Script Scripting Python</tags>
     <dependencies>
-      <dependency id="AdamsLair.Duality" version="2.9.5" />
+      <dependency id="AdamsLair.Duality" version="2.11.1" />
       <dependency id="IronPython" version="2.7.7" />
       <dependency id="IronPython.StdLib" version="2.7.7" />
     </dependencies>
