@@ -77,10 +77,10 @@ namespace RockyTV.Duality.Plugins.IronPython
 		{
 			if (_engine != null)
 			{
-				if (_engine.HasMethod("isVisible"))
+				if (_engine.HasMethod("is_visible"))
 				{
 					bool isVisible;
-					if (bool.TryParse(Convert.ToString(_engine.CallFunction("isVisible", device)), out isVisible))
+					if (bool.TryParse(Convert.ToString(_engine.CallFunction("is_visible", device)), out isVisible))
 						return isVisible;
 				}
 			}
