@@ -16,23 +16,23 @@ using Duality.Drawing;
 
 namespace RockyTV.Duality.Plugins.IronPython
 {
-    [EditorHintCategory(Properties.ResNames.CategoryScripts)]
-    [EditorHintImage(Properties.ResNames.IconScriptGo)]
-    public class PythonScriptExecutor : Component, ICmpInitializable, ICmpUpdatable, ICmpRenderer
-    {
-        public ContentRef<PythonScript> Script { get; set; }
+	[EditorHintCategory(Properties.ResNames.CategoryScripts)]
+	[EditorHintImage(Properties.ResNames.IconScriptGo)]
+	public class PythonScriptExecutor : Component, ICmpInitializable, ICmpUpdatable, ICmpRenderer
+	{
+		public ContentRef<PythonScript> Script { get; set; }
 
-        [DontSerialize]
-        private PythonExecutionEngine _engine;
-        protected PythonExecutionEngine Engine
-        {
-            get { return _engine; }
-        }
+		[DontSerialize]
+		private PythonExecutionEngine _engine;
+		protected PythonExecutionEngine Engine
+		{
+			get { return _engine; }
+		}
 
-        protected virtual float Delta
-        {
-            get { return Time.MsPFMult * Time.TimeMult; }
-        }
+		protected virtual float Delta
+		{
+			get { return Time.MsPFMult * Time.TimeMult; }
+		}
 
 		public float BoundRadius
 		{
@@ -46,32 +46,32 @@ namespace RockyTV.Duality.Plugins.IronPython
 		}
 
 		public void OnInit(InitContext context)
-        {
-            if (Script.IsExplicitNull || !Script.IsAvailable) return;
+		{
+			if (Script.IsExplicitNull || !Script.IsAvailable) return;
 
-            if (context == InitContext.Loaded)
-            {
-                _engine = new PythonExecutionEngine(Script.Res.Content);
-                _engine.SetVariable("game_object", GameObj);
-            }
+			if (context == InitContext.Loaded)
+			{
+				_engine = new PythonExecutionEngine(Script.Res.Content);
+				_engine.SetVariable("game_object", GameObj);
+			}
 
 			if (_engine != null)
 				if (_engine.HasMethod("start"))
 					_engine.CallMethod("start", context);
-        }
+		}
 
-        public void OnUpdate()
-        {
-            if (_engine != null)
-                if (_engine.HasMethod("update"))
-                    _engine.CallMethod("update", Delta);
-        }
+		public void OnUpdate()
+		{
+			if (_engine != null)
+				if (_engine.HasMethod("update"))
+					_engine.CallMethod("update", Delta);
+		}
 
-        public void OnShutdown(ShutdownContext context)
-        {
-            if (context == ShutdownContext.Deactivate)
-                GameObj.DisposeLater();
-        }
+		public void OnShutdown(ShutdownContext context)
+		{
+			if (context == ShutdownContext.Deactivate)
+				GameObj.DisposeLater();
+		}
 
 		public bool IsVisible(IDrawDevice device)
 		{

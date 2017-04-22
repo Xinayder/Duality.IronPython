@@ -10,7 +10,7 @@ namespace RockyTV.Duality.Editor.Plugins.IronPython
 	/// <summary>
 	/// Defines a Duality editor plugin.
 	/// </summary>
-    public class PythonScriptingEditorPlugin : EditorPlugin
+	public class PythonScriptingEditorPlugin : EditorPlugin
 	{
 		public override string Id
 		{
