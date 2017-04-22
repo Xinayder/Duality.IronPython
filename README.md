@@ -1,4 +1,4 @@
-# Duality.IronPython
+# Duality.IronPython [![NuGet](https://img.shields.io/nuget/v/RockyTV.Duality.Plugins.IronPython.svg)](https://www.nuget.org/packages/RockyTV.Duality.Plugins.IronPython/1.0.1)
 From their own website:
 
 > IronPython is an open-source implementation of the Python programming language which is tightly integrated with the .NET Framework.
