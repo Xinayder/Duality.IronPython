@@ -14,6 +14,7 @@ namespace RockyTV.Duality.Plugins.IronPython.Resources
 	public class PythonScript : Resource
 	{
 		protected string _content;
+		[EditorHintFlags(MemberFlags.Invisible)]
 		public string Content { get { return _content; } }
 
 		public PythonScript()

@@ -34,6 +34,7 @@ namespace RockyTV.Duality.Plugins.IronPython
 			get { return Time.MsPFMult * Time.TimeMult; }
 		}
 
+		[EditorHintFlags(MemberFlags.Invisible)]
 		public float BoundRadius
 		{
 			get
