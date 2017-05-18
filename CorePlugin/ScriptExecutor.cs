@@ -34,15 +34,13 @@ namespace RockyTV.Duality.Plugins.IronPython
 			get { return Time.MsPFMult * Time.TimeMult; }
 		}
 
+		private float boundRadius = 1.0f;
 		[EditorHintFlags(MemberFlags.Invisible)]
 		public float BoundRadius
 		{
 			get
 			{
-				if (_engine != null)
-					if (_engine.HasMethod("bound_radius"))
-						return Convert.ToSingle(_engine.GetVariable("bound_radius"));
-				return 0.0f;
+				return boundRadius;
 			}
 		}
 
@@ -57,8 +55,15 @@ namespace RockyTV.Duality.Plugins.IronPython
 			}
 
 			if (_engine != null)
+			{
+				// I can't find a way to retrieve single variables from the code
+				// that's why we need a function (method that returns an object)
+				if (_engine.HasMethod("bound_radius"))
+					boundRadius = Convert.ToSingle(_engine.CallFunction("bound_radius"));
+
 				if (_engine.HasMethod("start"))
 					_engine.CallMethod("start", context);
+			}
 		}
 
 		public void OnUpdate()
