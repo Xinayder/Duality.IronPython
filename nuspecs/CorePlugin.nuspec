@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>RockyTV.Duality.Plugins.IronPython</id>
-    <version>1.0.1</version>
+    <version>1.1.0</version>
     <title>Python Integration (Core)</title>
     <authors>Alexandre Oliveira</authors>
     <owners>Alexandre Oliveira</owners>
@@ -19,6 +19,12 @@
     there may be some features that the official Python language may not have, or some features may be
     missing.
     </description>
+    <releaseNotes>
+    - Added support for ICmpRenderer interface
+    - Fixed a rare bug that would cause the plugin to crash if the execution engine wasn't initialized
+
+    To implement the ICmpRenderer interface on your Python script, you must add the following methods: draw(self, device) and is_visible(self, device).
+    </releaseNotes>
     <copyright>Copyright 2017</copyright>
     <tags>Duality Plugin Script Scripting Python</tags>
     <dependencies>
