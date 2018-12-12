@@ -71,25 +71,19 @@ namespace RockyTV.Duality.Plugins.IronPython
 			GameObj.DisposeLater();
 		}
 
-		public bool IsVisible(IDrawDevice device)
-		{
-			if (_engine != null)
-			{
-				if (_engine.HasMethod("is_visible"))
-				{
-					bool isVisible;
-					if (bool.TryParse(Convert.ToString(_engine.CallFunction("is_visible", device)), out isVisible))
-						return isVisible;
-				}
-			}
-			return false;
-		}
-
-		public void Draw(IDrawDevice device)
+		void ICmpRenderer.Draw(IDrawDevice device)
 		{
 			if (_engine != null)
 				if (_engine.HasMethod("draw"))
 					_engine.CallMethod("draw", device);
+		}
+
+		void ICmpRenderer.GetCullingInfo(out CullingInfo info)
+		{
+
+			info.Position = Vector3.Zero;
+			info.Radius = boundRadius;
+			info.Visibility = VisibilityFlag.AllGroups | VisibilityFlag.ScreenOverlay;
 		}
 	}
 }
