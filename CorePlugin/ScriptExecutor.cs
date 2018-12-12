@@ -59,7 +59,7 @@ namespace RockyTV.Duality.Plugins.IronPython
 			}
 		}
 
-		public void OnUpdate()
+		void ICmpUpdatable.OnUpdate()
 		{
 			if (_engine != null)
 				if (_engine.HasMethod("update"))
