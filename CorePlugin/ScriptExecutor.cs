@@ -40,15 +40,12 @@ namespace RockyTV.Duality.Plugins.IronPython
 			}
 		}
 
-		public void OnInit(InitContext context)
+		void ICmpInitializable.OnActivate()
 		{
 			if (Script.IsExplicitNull || !Script.IsAvailable) return;
 
-			if (context == InitContext.Loaded)
-			{
-				_engine = new PythonExecutionEngine(Script.Res.Content);
-				_engine.SetVariable("game_object", GameObj);
-			}
+			_engine = new PythonExecutionEngine(Script.Res.Content);
+			_engine.SetVariable("game_object", GameObj);
 
 			if (_engine != null)
 			{
@@ -58,7 +55,7 @@ namespace RockyTV.Duality.Plugins.IronPython
 					boundRadius = Convert.ToSingle(_engine.CallFunction("bound_radius"));
 
 				if (_engine.HasMethod("start"))
-					_engine.CallMethod("start", context);
+					_engine.CallMethod("start");
 			}
 		}
 
@@ -69,10 +66,9 @@ namespace RockyTV.Duality.Plugins.IronPython
 					_engine.CallMethod("update", Delta);
 		}
 
-		public void OnShutdown(ShutdownContext context)
+		void ICmpInitializable.OnDeactivate()
 		{
-			if (context == ShutdownContext.Deactivate)
-				GameObj.DisposeLater();
+			GameObj.DisposeLater();
 		}
 
 		public bool IsVisible(IDrawDevice device)
