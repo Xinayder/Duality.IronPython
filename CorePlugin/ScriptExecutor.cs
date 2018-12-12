@@ -29,11 +29,7 @@ namespace RockyTV.Duality.Plugins.IronPython
 			get { return _engine; }
 		}
 
-		protected virtual float Delta
-		{
-			get { return Time.MsPFMult * Time.TimeMult; }
-		}
-
+		protected virtual float Delta => Time.DeltaTime;
 		private float boundRadius = 1.0f;
 		[EditorHintFlags(MemberFlags.Invisible)]
 		public float BoundRadius
