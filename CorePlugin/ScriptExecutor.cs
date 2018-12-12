@@ -73,9 +73,17 @@ namespace RockyTV.Duality.Plugins.IronPython
 
 		void ICmpRenderer.Draw(IDrawDevice device)
 		{
+			// Create the canvas in our code and just pass it as a parameter
+			// to the script's draw function
+			var _canvas = new Canvas();
+
+			_canvas.Begin(device);
+
 			if (_engine != null)
 				if (_engine.HasMethod("draw"))
-					_engine.CallMethod("draw", device);
+					_engine.CallMethod("draw", _canvas);
+
+			_canvas.End();
 		}
 
 		void ICmpRenderer.GetCullingInfo(out CullingInfo info)
